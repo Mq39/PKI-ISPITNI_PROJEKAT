@@ -1,0 +1,23 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #111111;
+  margin-bottom: 40px;
+}
+
+.spacer {
+  flex: auto 1 1;
+}
+
+.logo-button {
+  margin-right: 30px;
+  font-size: 38px;
+}
+
+.nav-bar-link {
+  font-size: 18px;
+}
+
+.nav-bar-margin-top {
+  margin-top: 15px;
+}
