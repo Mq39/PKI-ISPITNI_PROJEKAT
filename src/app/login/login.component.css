@@ -1,0 +1,27 @@
+.login-form {
+  width: 450px;
+  height: 350px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 200px;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.image-test {
+  height: 448px;
+  width: 400px;
+  margin-right: 60px;
+  margin-left: 0px;
+  margin-top: 140px;
+}
+
+.container {
+  margin-left: -60px;
+}
+
+button {
+  margin-top: 25px;
+}

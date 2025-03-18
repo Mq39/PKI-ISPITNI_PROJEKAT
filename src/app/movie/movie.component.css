@@ -1,0 +1,61 @@
+.wrapper {
+  margin-left: 300px;
+  margin-top: 60px;
+  display: flex;
+  color: white;
+}
+
+.movie-cover {
+  margin-right: 50px;
+}
+
+.movie-details h1,
+h2,
+h3 {
+  margin-top: 10px;
+}
+
+h2,
+h3 {
+  color: rgb(187, 184, 184);
+}
+
+.movie-details-description {
+  margin-top: 100px;
+  width: 600px;
+}
+.movie-details-info {
+  margin-top: 100px;
+}
+
+b {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+button {
+  background-color: white;
+  margin-top: 60px;
+  margin-left: 50px;
+}
+
+button i {
+  color: black;
+}
+
+.button-minus {
+  margin-left: 10px;
+}
+
+.button-plus {
+  margin-right: 10px;
+}
+
+.reservation {
+  height: 10px;
+}
+
+.checkout-button {
+  margin-left: 100px;
+  border-radius: 10%;
+}

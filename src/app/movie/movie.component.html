@@ -1,0 +1,47 @@
+<div class="wrapper">
+  <div class="movie-cover"><img [src]="movie!.coverImage" /></div>
+  <div class="movie-details">
+    <h1>{{ movie!.name }}</h1>
+    <h2>{{ movie!.genre }}</h2>
+    <h3>{{ movie!.duration }}</h3>
+    <div class="movie-details-description">
+      <p>{{ movie!.description }}</p>
+    </div>
+    <div class="movie-details-info">
+      <p>
+        <b><i>Stars:</i></b> {{ movie!.actors }}
+      </p>
+      <p>
+        <b><i>Director:</i></b> {{ movie!.director }}
+      </p>
+      <p>
+        <b><i>Release date: </i></b> {{ movie!.dateOfRelease }}
+      </p>
+      <div class="reservation">
+        <button
+          [disabled]="reservation == 0"
+          (click)="removeTicket()"
+          _ngcontent-ng-c1927635254=""
+          mat-mini-fab=""
+          class="mdc-fab mat-mdc-fab-base mdc-fab--mini mat-mdc-mini-fab mat-accent mat-mdc-button-base button-plus"
+        >
+          <span class="mat-mdc-button-persistent-ripple mdc-fab__ripple"></span><i class="fa-solid fa-minus"></i
+          ><span class="mdc-button__label"></span><span class="mat-focus-indicator"></span
+          ><span class="mat-mdc-button-touch-target"></span><span class="mat-ripple mat-mdc-button-ripple"></span>
+        </button>
+        {{ reservation }}
+        <button
+          (click)="addTicket()"
+          class="mdc-fab mat-mdc-fab-base mdc-fab--mini mat-mdc-mini-fab mat-accent mat-mdc-button-base button-minus"
+        >
+          <span class="mat-mdc-button-persistent-ripple mdc-fab__ripple"></span><i class="fa-solid fa-plus"></i
+          ><span class="mdc-button__label"></span><span class="mat-focus-indicator"></span
+          ><span class="mat-mdc-button-touch-target"></span><span class="mat-ripple mat-mdc-button-ripple"></span>
+        </button>
+        <a mat-flat-button routerLink="/cart" class="checkout-button" [disabled]="reservation == 0"
+          >Continue to checkout</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

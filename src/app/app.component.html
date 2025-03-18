@@ -1,19 +1,23 @@
 <mat-toolbar color="primary">
   <div class="logo-button">
-    <span><i class="fa-solid fa-film .margin-top-10px"></i> Cineman</span>
+    <a routerLink="/home"><img mat-card-image class="image-test" src="../../assets/popcorn.ico" /> </a>
   </div>
-  <a routerLink="/about" mat-button class="nav-bar-link nav-bar-margin-top"
-    >About</a
-  >
-  <a routerLink="/search" mat-button class="nav-bar-link nav-bar-margin-top"
-    >Search</a
-  >
+
   <span class="spacer"></span>
-  <a routerLink="/about" mat-button class="nav-bar-link nav-bar-margin-top"
+
+  <a routerLink="/search" mat-button class="nav-bar-link nav-bar-margin-top"
+    ><i class="fa-solid fa-magnifying-glass"></i
+  ></a>
+  <a routerLink="/login" mat-button class="nav-bar-link nav-bar-margin-top"
     ><i class="fa-solid fa-right-to-bracket"></i> LogIn</a
   >
-  <a routerLink="/search" mat-button class="nav-bar-link nav-bar-margin-top"
+  <a routerLink="/register" mat-button class="nav-bar-link nav-bar-margin-top"
     ><i class="fa-solid fa-user"></i> Register</a
   >
+  <div clas="cart">
+    <a routerLink="/cart" mat-button class="nav-bar-link nav-bar-margin-top cart"
+      ><i class="fa-solid fa-cart-shopping"></i>
+    </a>
+  </div>
 </mat-toolbar>
 <router-outlet />

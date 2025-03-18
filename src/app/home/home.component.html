@@ -1,0 +1,13 @@
+<div class="background-image">
+  <ul>
+    <li *ngFor="let movie of recommended">
+      <a [routerLink]="['/movie', movie.name]">
+        <img [src]="movie.coverImage" alt="{{ movie.name }}" />
+        <figcaption>
+          {{ movie.name }}
+          <figcaption class="dateOfRelease">Date of release: {{ movie.dateOfRelease }}</figcaption>
+        </figcaption>
+      </a>
+    </li>
+  </ul>
+</div>

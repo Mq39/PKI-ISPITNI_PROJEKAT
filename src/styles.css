@@ -8,27 +8,9 @@ body {
   background-color: #333333;
 }
 
-/* .container {
+.container {
   margin-top: 30px;
   display: flex;
   justify-content: center;
   gap: 10px;
 }
-
-.search-card {
-  width: 900px;
-  background-color: #111111;
-  margin-bottom: 20px;
-}
-
-.search-form {
-  display: flex;
-  justify-content: left;
-  gap: 5px;
-}
-
-.example-card {
-  max-width: 400px;
-  background-color: #111111;
-  border: 0.01rem solid #333333;
-} */
