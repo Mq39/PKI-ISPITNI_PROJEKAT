@@ -1,15 +1,16 @@
 <div class="wrapper">
   <input type="text" [(ngModel)]="searchQuery" (input)="searchMovies()" />
-
-  <ul>
-    <li *ngFor="let movie of search">
-      <a [routerLink]="['/movie', movie.name]">
-        <div class="movie-cover">
-          <img [src]="movie!.coverImage" />
-          <h3>{{ movie!.name }}</h3>
-          <h4>{{ movie!.genre }}</h4>
-        </div>
-      </a>
-    </li>
-  </ul>
+  <div class="movie-list">
+    <ul>
+      <li *ngFor="let movie of search">
+        <a [routerLink]="['/movie', movie.name]">
+          <div class="movie-cover">
+            <img [src]="movie!.coverImage" />
+            <h3>{{ movie!.name }}</h3>
+            <h4>{{ movie!.genre }}</h4>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>

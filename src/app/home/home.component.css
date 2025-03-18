@@ -35,3 +35,7 @@ figcaption {
   color: rgb(177, 170, 170);
   font-size: 15px;
 }
+
+li:hover img {
+  filter: brightness(80%); /* Slight darkening on hover */
+}

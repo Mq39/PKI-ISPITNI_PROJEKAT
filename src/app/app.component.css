@@ -24,7 +24,6 @@ mat-toolbar {
 }
 
 a {
-  color: white;
   text-decoration: none;
 }
 
@@ -32,7 +31,11 @@ a {
   font-size: 25px;
 }
 
-.image-test {
+.image {
   width: 50px;
   height: 60px;
+}
+
+a:hover {
+  filter: brightness(80%);
 }

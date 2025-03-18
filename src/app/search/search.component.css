@@ -9,7 +9,7 @@
   padding: 15px;
   font-size: 18px;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   background-color: white;
   color: #333;
   margin-left: auto;
@@ -61,4 +61,8 @@ a {
 
 .movie-cover {
   width: 200px;
+}
+
+li:hover img {
+  filter: brightness(80%); /* Slight darkening on hover */
 }
