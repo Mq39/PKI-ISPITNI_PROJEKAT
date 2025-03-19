@@ -10,4 +10,5 @@ export interface MovieModel {
   rating: number;
   coverImage: string;
   price: number;
+  numberOfTickets: number;
 }

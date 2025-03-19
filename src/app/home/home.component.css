@@ -48,9 +48,10 @@ figcaption {
   font-size: 17px;
 }
 
-.dateOfRelease {
+.date-of-release {
   color: rgb(177, 170, 170);
   font-size: 15px;
+  margin-top: 10px;
 }
 
 li img:hover {

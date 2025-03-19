@@ -4,20 +4,22 @@
   </div>
 
   <span class="spacer"></span>
-
+  <div class="search-nav-button"></div>
   <a routerLink="/search" mat-button class="nav-bar-link nav-bar-margin-top"
     ><i class="fa-solid fa-magnifying-glass"></i
   ></a>
-  <a routerLink="/login" mat-button class="nav-bar-link nav-bar-margin-top"
+
+  <a routerLink="/login" mat-button class="nav-bar-link nav-bar-margin-top" *ngIf="!isLoggedIn"
     ><i class="fa-solid fa-right-to-bracket"></i> LogIn</a
   >
-  <a routerLink="/register" mat-button class="nav-bar-link nav-bar-margin-top"
+  <a routerLink="/register" mat-button class="nav-bar-link nav-bar-margin-top" *ngIf="!isLoggedIn"
     ><i class="fa-solid fa-user"></i> Register</a
   >
-  <div clas="cart">
-    <a routerLink="/cart" mat-button class="nav-bar-link nav-bar-margin-top cart"
-      ><i class="fa-solid fa-cart-shopping"></i>
-    </a>
-  </div>
+  <a mat-button class="nav-bar-link nav-bar-margin-top" *ngIf="isLoggedIn" (click)="logout()"
+    ><i class="fa-solid fa-right-from-bracket"></i> Logout</a
+  >
+  <a routerLink="/profile" mat-button class="nav-bar-link nav-bar-margin-top" *ngIf="isLoggedIn"
+    ><img [src]="getAvatarUrl()" mat-card-avatar class="avatar" />
+  </a>
 </mat-toolbar>
 <router-outlet />

@@ -10,7 +10,8 @@
     "dateOfShowing": "26.03.2025.",
     "rating": 3.5,
     "coverImage": "../../assets/DenOfThieves.jpg",
-    "price": 9
+    "price": 9,
+    "numberOfTickets": 0
   },
   {
     "name": "Bridget Jones: Mad About the Boy",
@@ -23,7 +24,8 @@
     "dateOfShowing": "27.03.2025.",
     "rating": 1,
     "coverImage": "../../assets/BJMAH.jpg",
-    "price": 13
+    "price": 13,
+    "numberOfTickets": 0
   },
   {
     "name": "Black Bag",
@@ -36,7 +38,8 @@
     "dateOfShowing": "28.03.2025.",
     "rating": 1,
     "coverImage": "../../assets/BlackBag.jpg",
-    "price": 5
+    "price": 5,
+    "numberOfTickets": 0
   },
   {
     "name": "Captain America: Brave New World",
@@ -49,7 +52,8 @@
     "dateOfShowing": "29.03.2025.",
     "rating": 1,
     "coverImage": "../../assets/CaptainAmerica.jpg",
-    "price": 4
+    "price": 4,
+    "numberOfTickets": 0
   },
   {
     "name": "The Monkey",
@@ -62,7 +66,8 @@
     "dateOfShowing": "30.03.2025.",
     "rating": 1,
     "coverImage": "../../assets/Monkey.jpg",
-    "price": 15
+    "price": 15,
+    "numberOfTickets": 0
   },
   {
     "name": "Mickey 17",
@@ -75,7 +80,8 @@
     "dateOfShowing": "29.03.2025.",
     "rating": 1,
     "coverImage": "../../assets/Mickey17.jpg",
-    "price": 10
+    "price": 10,
+    "numberOfTickets": 0
   },
   {
     "name": "The Bayou",
@@ -88,7 +94,8 @@
     "dateOfShowing": "28.03.2025.",
     "rating": 1,
     "coverImage": "../../assets/TheBayou.jpg",
-    "price": 5
+    "price": 5,
+    "numberOfTickets": 0
   },
   {
     "name": "Last Breath",
@@ -101,7 +108,8 @@
     "dateOfShowing": "26.03.2025.",
     "rating": 1,
     "coverImage": "../../assets/LastBreath.jpg",
-    "price": 7
+    "price": 7,
+    "numberOfTickets": 0
   },
   {
     "name": "Queer",
@@ -114,7 +122,8 @@
     "dateOfShowing": "27.03.2025.",
     "rating": 1,
     "coverImage": "../../assets/Queer.jpg",
-    "price": 6
+    "price": 6,
+    "numberOfTickets": 0
   },
   {
     "name": "Babygirl",
@@ -127,6 +136,7 @@
     "dateOfShowing": "29.03.2025.",
     "rating": 1,
     "coverImage": "../../assets/Lust.jpg",
-    "price": 5
+    "price": 5,
+    "numberOfTickets": 0
   }
 ]

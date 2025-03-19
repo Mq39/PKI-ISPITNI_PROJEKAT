@@ -1,0 +1,54 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  width: 1200px;
+  min-height: 600px;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 1000px;
+}
+
+.movie-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.movie-cover {
+  width: 100px; /* Adjust size */
+  height: auto;
+  border-radius: 5px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.checkout {
+  border-radius: 10px;
+}
+
+.divider {
+  color: black;
+  width: 99%;
+}
+
+.remove-button {
+  margin-right: 0px;
+}
+
+.image-test {
+  display: block;
+  margin-bottom: 0px;
+}
+
+b {
+  margin-right: 5px;
+}

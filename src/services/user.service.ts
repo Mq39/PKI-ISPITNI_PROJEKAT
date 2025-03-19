@@ -21,6 +21,7 @@ export class UserService {
         email: 'predragmitr@example.com',
         name: 'Predrag Mitrovic',
         password: 'pmitrovic',
+        booked: [],
       };
 
       localStorage.setItem('users', JSON.stringify([defaultUser]));
