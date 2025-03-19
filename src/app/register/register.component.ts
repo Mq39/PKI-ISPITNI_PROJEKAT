@@ -16,8 +16,10 @@ import Swal from 'sweetalert2';
 export class RegisterComponent {
   public email: string = '';
   public name: string = '';
+  public lastName: string = '';
   public password: string = '';
   public confirmPassword: string = '';
+  public phoneNumber: string = '';
   private userService: UserService;
   public active: boolean = false;
 
@@ -33,12 +35,20 @@ export class RegisterComponent {
     this.name = e.target.value;
   }
 
+  public updateLastName(e: any) {
+    this.lastName = e.target.value;
+  }
+
   public updatePassword(e: any) {
     this.password = e.target.value;
   }
 
   public updateConfirmPassword(e: any) {
     this.confirmPassword = e.target.value;
+  }
+
+  public updatePhoneNumber(e: any) {
+    this.phoneNumber = e.target.value;
   }
 
   public doSignup() {
@@ -55,6 +65,15 @@ export class RegisterComponent {
       Swal.fire({
         title: 'Error!',
         text: 'You must enter your name.',
+        icon: 'error',
+        confirmButtonText: 'I understand',
+      });
+      return;
+    }
+    if (this.lastName == '') {
+      Swal.fire({
+        title: 'Error!',
+        text: 'You must enter your last name.',
         icon: 'error',
         confirmButtonText: 'I understand',
       });
@@ -87,13 +106,23 @@ export class RegisterComponent {
       });
       return;
     }
+    if (this.phoneNumber == '') {
+      Swal.fire({
+        title: 'Error!',
+        text: 'You must enter your phone number.',
+        icon: 'error',
+        confirmButtonText: 'I understand',
+      });
+      return;
+    }
 
     try {
       this.userService.createUser({
         email: this.email,
         name: this.name,
+        lastName: this.lastName,
         password: this.password,
-        booked: [],
+        phoneNumber: this.phoneNumber,
       });
     } catch (e) {
       alert(e);

@@ -77,6 +77,19 @@ export class UserService {
     localStorage.setItem('users', JSON.stringify(all));
   }
 
+  public changePhoneNUmber(phoneNUmber: string) {
+    const active = this.getCurrentUser();
+    active.phoneNumber = phoneNUmber;
+
+    var all = this.retrieveAllUsers();
+    for (let i = 0; i < all.length; i++) {
+      if (all[i].email == active.email) {
+        all[i].phoneNumber = phoneNUmber;
+      }
+    }
+    localStorage.setItem('users', JSON.stringify(all));
+  }
+
   public updateUser(model: UserModel) {
     var all = this.retrieveAllUsers();
     for (let i = 0; i < all.length; i++) {

@@ -4,8 +4,9 @@ export interface UserModel {
   id?: number;
   email: string;
   name: string;
+  lastName: string;
   password: string;
-  booked: string[];
+  phoneNumber: string;
 }
 
 export enum ReviewModel {

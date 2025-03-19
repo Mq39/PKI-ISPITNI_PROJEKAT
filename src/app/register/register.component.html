@@ -14,12 +14,20 @@
         <input type="text" matInput (change)="updateName($event)" (keyup.enter)="doSignup()" />
       </mat-form-field>
       <mat-form-field class="width-full">
+        <mat-label>Last name</mat-label>
+        <input type="text" matInput (change)="updateLastName($event)" (keyup.enter)="doSignup()" />
+      </mat-form-field>
+      <mat-form-field class="width-full">
         <mat-label>Password</mat-label>
         <input type="password" matInput (change)="updatePassword($event)" (keyup.enter)="doSignup()" />
       </mat-form-field>
       <mat-form-field class="width-full">
         <mat-label>Confirm password</mat-label>
         <input type="password" matInput (change)="updateConfirmPassword($event)" (keyup.enter)="doSignup()" />
+      </mat-form-field>
+      <mat-form-field class="width-full">
+        <mat-label>Phone number</mat-label>
+        <input type="text" matInput (change)="updatePhoneNumber($event)" (keyup.enter)="doSignup()" />
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>

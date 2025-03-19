@@ -8,7 +8,7 @@
   <a routerLink="/search" mat-button class="nav-bar-link nav-bar-margin-top"
     ><i class="fa-solid fa-magnifying-glass"></i
   ></a>
-  <a routerLink="/cart" mat-button class="nav-bar-link nav-bar-margin-top"
+  <a routerLink="/cart" mat-button class="nav-bar-link nav-bar-margin-top" *ngIf="isLoggedIn"
     ><i class="fa-solid fa-ticket"></i> My bookings
   </a>
   <a routerLink="/login" mat-button class="nav-bar-link nav-bar-margin-top" *ngIf="!isLoggedIn"

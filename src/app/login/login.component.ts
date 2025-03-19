@@ -52,7 +52,9 @@ export class LoginComponent {
 
     try {
       this.userService.login(this.email, this.password);
-      this.router.navigate(['/home'], { relativeTo: this.route });
+      this.router.navigate(['/home'], { relativeTo: this.route }).then(() => {
+        window.location.reload();
+      });
     } catch (e) {
       alert(e);
     }
