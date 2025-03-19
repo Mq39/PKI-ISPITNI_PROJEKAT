@@ -111,7 +111,7 @@ export class ProfileComponent implements OnInit {
         //@ts-ignore
         Swal.fire({
           title: 'Success',
-          text: 'Your password has been changed successfully',
+          text: 'Your phone number has been changed successfully',
           icon: 'info',
         }).then(() =>
           this.router.navigate(['/home']).then(() => {
