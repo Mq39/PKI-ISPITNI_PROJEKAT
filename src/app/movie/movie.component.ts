@@ -46,8 +46,6 @@ export class MovieComponent implements OnInit {
           title: 'Reservation confirmed',
           icon: 'success',
           confirmButtonColor: '#3085d6',
-        }).then(() => {
-          this.router.navigate(['/home']);
         });
       }
       if (result.isConfirmed) {
@@ -65,6 +63,9 @@ export class MovieComponent implements OnInit {
           price: this.movie!.price,
           numberOfTickets: this.numOfTickets,
         });
+
+        this.totalPrice = 0;
+        this.numOfTickets = 0;
       }
 
       if (result.dismiss == Swal.DismissReason.cancel) {
@@ -77,6 +78,8 @@ export class MovieComponent implements OnInit {
           },
         }).then(() => {
           window.open('https://google.com');
+          this.totalPrice = 0;
+          this.numOfTickets = 0;
         });
       }
 

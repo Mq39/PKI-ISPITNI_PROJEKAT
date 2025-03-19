@@ -1,5 +1,6 @@
 <div class="wrapper">
-  <div *ngFor="let movie of bookedMovies" class="movie-container">
+  <h1 class="title">Booked projections</h1>
+  <div *ngFor="let movie of bookedMovies; let i = index" class="movie-container">
     <div class="movie-cover-container">
       <img [src]="movie!.coverImage" class="movie-cover" />
     </div>
@@ -12,10 +13,15 @@
         <b><i>Total: </i></b> {{ movie.price }}$ x {{ movie.numberOfTickets }} =
         {{ movie.price * movie.numberOfTickets }}$
       </p>
-      <a mat-flat-button class="checkout"><i class="fa-solid fa-trash remove-button"></i></a>
+      <button
+        (click)="removeReservation(i)"
+        class="mdc-fab mat-mdc-fab-base mdc-fab--mini mat-mdc-mini-fab mat-accent mat-mdc-button-base checkout"
+      >
+        <i class="fa-solid fa-trash remove-button"></i>
+      </button>
     </div>
   </div>
-  <div class="checkout-container">
-    <a mat-flat-button class="checkout">Checkout</a>
+  <div class="total-amount-container">
+    <h2 class="total-amount">Total Amount: {{ totalAmount }}$</h2>
   </div>
 </div>

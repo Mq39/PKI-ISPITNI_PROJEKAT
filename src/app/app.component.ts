@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public isLoggedIn: boolean = false;
   public active: UserModel | null = null;
   constructor(private userService: UserService, private router: Router) {}
@@ -23,6 +23,10 @@ export class AppComponent {
   ngOnInit() {
     this.checkUserStatus();
     this.active = this.userService.getCurrentUser();
+  }
+
+  ngOnChange() {
+    this.isLoggedIn = this.userService.hasCurrentUser();
   }
 
   checkUserStatus() {
