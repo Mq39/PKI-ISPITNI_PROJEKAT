@@ -1,13 +1,27 @@
-<div class="background-image">
+<div class="container">
+  <div class="filter-container">
+    <mat-form-field class="location-filter">
+      <mat-select [(value)]="selected" [(ngModel)]="selected" (selectionChange)="filterDate()">
+        <mat-option value="Currently showing">Currently showing</mat-option>
+        <mat-option value="26.03.2025.">26.03.2025.</mat-option>
+        <mat-option value="27.03.2025.">27.03.2025.</mat-option>
+        <mat-option value="28.03.2025.">28.03.2025.</mat-option>
+        <mat-option value="29.03.2025.">29.03.2025.</mat-option>
+        <mat-option value="30.03.2025.">30.03.2025.</mat-option>
+        <mat-option value="01.04.2025.">01.04.2025.</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
   <ul>
-    <li *ngFor="let movie of recommended">
+    <li *ngFor="let movie of search">
       <a [routerLink]="['/movie', movie.name]">
         <img [src]="movie.coverImage" alt="{{ movie.name }}" />
-        <figcaption>
-          {{ movie.name }}
-          <figcaption class="dateOfRelease">Date of release: {{ movie.dateOfRelease }}</figcaption>
-        </figcaption>
       </a>
+      <figcaption>
+        {{ movie.name }}
+        <figcaption class="dateOfRelease">Date of release: {{ movie.dateOfRelease }}</figcaption>
+      </figcaption>
     </li>
   </ul>
 </div>

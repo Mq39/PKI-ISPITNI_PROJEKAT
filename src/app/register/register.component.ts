@@ -4,11 +4,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { UserService } from '../../services/user.service';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [MatInputModule, MatCardModule, RouterLink, MatButtonModule],
+  imports: [MatInputModule, MatCardModule, RouterLink, MatButtonModule, MatCheckboxModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
@@ -18,6 +19,7 @@ export class RegisterComponent {
   public password: string = '';
   public confirmPassword: string = '';
   private userService: UserService;
+  public active: boolean = false;
 
   public constructor(private router: Router, private route: ActivatedRoute) {
     this.userService = UserService.getInstance();
@@ -40,12 +42,49 @@ export class RegisterComponent {
   }
 
   public doSignup() {
-    if (this.email == '') return;
-    if (this.name == '') return;
-    if (this.password == '') return;
-    if (this.confirmPassword == '') return;
+    if (this.email == '') {
+      Swal.fire({
+        title: 'Error!',
+        text: 'You must enter a valid email adress.',
+        icon: 'error',
+        confirmButtonText: 'I understand',
+      });
+      return;
+    }
+    if (this.name == '') {
+      Swal.fire({
+        title: 'Error!',
+        text: 'You must enter your name.',
+        icon: 'error',
+        confirmButtonText: 'I understand',
+      });
+      return;
+    }
+    if (this.password == '') {
+      Swal.fire({
+        title: 'Error!',
+        text: 'You must enter a password.',
+        icon: 'error',
+        confirmButtonText: 'I understand',
+      });
+      return;
+    }
+    if (this.confirmPassword == '') {
+      Swal.fire({
+        title: 'Error!',
+        text: 'You must confirm your password.',
+        icon: 'error',
+        confirmButtonText: 'I understand',
+      });
+      return;
+    }
     if (this.password != this.confirmPassword) {
-      alert('passwords dont match');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Passwords dont match.',
+        icon: 'error',
+        confirmButtonText: 'I understand',
+      });
       return;
     }
 
@@ -64,5 +103,12 @@ export class RegisterComponent {
     this.router.navigate(['/login'], {
       relativeTo: this.route,
     });
+  }
+
+  public isActive() {
+    if (this.active == false) this.active = true;
+    else {
+      !this.active;
+    }
   }
 }

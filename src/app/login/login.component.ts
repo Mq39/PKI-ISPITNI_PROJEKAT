@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { UserService } from '../../services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -31,11 +32,21 @@ export class LoginComponent {
 
   public doLogin() {
     if (this.email == '') {
-      alert('Username is empty!');
+      Swal.fire({
+        title: 'Error!',
+        text: 'You must enter a valid email adress.',
+        icon: 'error',
+        confirmButtonText: 'I understand',
+      });
       return;
     }
     if (this.password == '') {
-      alert('Password is empty!');
+      Swal.fire({
+        title: 'Error!',
+        text: 'You must enter a password.',
+        icon: 'error',
+        confirmButtonText: 'I understand',
+      });
       return;
     }
 

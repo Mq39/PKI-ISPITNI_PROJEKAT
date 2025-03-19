@@ -3,13 +3,13 @@
   <div class="movie-list">
     <ul>
       <li *ngFor="let movie of search">
-        <a [routerLink]="['/movie', movie.name]">
-          <div class="movie-cover">
+        <div class="movie-cover">
+          <a [routerLink]="['/movie', movie.name]">
             <img [src]="movie!.coverImage" />
             <h3>{{ movie!.name }}</h3>
-            <h4>{{ movie!.genre }}</h4>
-          </div>
-        </a>
+          </a>
+          <h4>{{ movie!.genre }}</h4>
+        </div>
       </li>
     </ul>
   </div>

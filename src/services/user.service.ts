@@ -21,19 +21,8 @@ export class UserService {
         email: 'predragmitr@example.com',
         name: 'Predrag Mitrovic',
         password: 'pmitrovic',
-        booked: [
-          {
-            id: 145324,
-            flight: null,
-            review: ReviewModel.NONE,
-          },
-          {
-            id: 145469,
-            flight: null,
-            review: ReviewModel.NONE,
-          },
-        ],
       };
+
       localStorage.setItem('users', JSON.stringify([defaultUser]));
       json = localStorage.getItem('users');
     }

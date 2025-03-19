@@ -21,11 +21,9 @@ h3 {
 }
 
 .movie-details-description {
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   width: 600px;
-}
-.movie-details-info {
-  margin-top: 100px;
 }
 
 b {
@@ -35,7 +33,7 @@ b {
 
 button {
   background-color: white;
-  margin-top: 60px;
+  margin-top: 30px;
   margin-left: 50px;
 }
 
@@ -58,4 +56,14 @@ button i {
 .checkout-button {
   margin-left: 100px;
   border-radius: 10%;
+}
+
+button:hover,
+.checkout-button:hover {
+  filter: brightness(80%);
+  box-shadow: 0 4px 12px 0 rgba(165, 163, 163, 0.24), 0 14px 12px 0 rgba(136, 133, 133, 0.19);
+}
+
+.ticket-price {
+  margin-top: 50px;
 }

@@ -9,7 +9,7 @@
     </div>
     <div class="movie-details-info">
       <p>
-        <b><i>Stars:</i></b> {{ movie!.actors }}
+        <b><i>Stars:</i></b> {{ movie!.actors }}<span></span>
       </p>
       <p>
         <b><i>Director:</i></b> {{ movie!.director }}
@@ -17,9 +17,18 @@
       <p>
         <b><i>Release date: </i></b> {{ movie!.dateOfRelease }}
       </p>
+      <p>
+        <b><i>Projection date: </i></b> {{ movie!.dateOfShowing }}
+      </p>
+      <p class="ticket-price">
+        <b><i>Ticket price: </i></b> {{ movie!.price }}$
+      </p>
+      <p>
+        <b><i>Total: </i></b> {{ totalPrice }}$
+      </p>
       <div class="reservation">
         <button
-          [disabled]="reservation == 0"
+          [disabled]="numOfTickets == 0"
           (click)="removeTicket()"
           _ngcontent-ng-c1927635254=""
           mat-mini-fab=""
@@ -29,7 +38,7 @@
           ><span class="mdc-button__label"></span><span class="mat-focus-indicator"></span
           ><span class="mat-mdc-button-touch-target"></span><span class="mat-ripple mat-mdc-button-ripple"></span>
         </button>
-        {{ reservation }}
+        {{ numOfTickets }}
         <button
           (click)="addTicket()"
           class="mdc-fab mat-mdc-fab-base mdc-fab--mini mat-mdc-mini-fab mat-accent mat-mdc-button-base button-minus"
@@ -38,8 +47,8 @@
           ><span class="mdc-button__label"></span><span class="mat-focus-indicator"></span
           ><span class="mat-mdc-button-touch-target"></span><span class="mat-ripple mat-mdc-button-ripple"></span>
         </button>
-        <a mat-flat-button routerLink="/cart" class="checkout-button" [disabled]="reservation == 0"
-          >Continue to checkout</a
+        <a mat-flat-button (click)="continueShopping()" class="checkout-button" [disabled]="numOfTickets == 0"
+          >Add to cart</a
         >
       </div>
     </div>

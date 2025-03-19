@@ -9,4 +9,5 @@ export interface MovieModel {
   dateOfShowing: string;
   rating: number;
   coverImage: string;
+  price: number;
 }

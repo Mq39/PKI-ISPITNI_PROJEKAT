@@ -1,5 +1,3 @@
-import { MovieModel } from './movie.model';
-
 export interface UserModel {
   email: string;
   name: string;

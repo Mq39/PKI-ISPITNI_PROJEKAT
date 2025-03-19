@@ -28,6 +28,7 @@ ul {
 li {
   display: flex;
   gap: 20px;
+  width: fit-content;
 }
 
 img {
@@ -36,17 +37,14 @@ img {
 }
 
 h3 {
-  margin-top: 0;
   font-size: 14px;
   color: white;
   margin-bottom: 10px;
-  margin-top: 0px;
 }
 
 h4 {
-  margin-top: 0;
   font-size: 12px;
-  color: white;
+  color: rgb(177, 170, 170);
 }
 
 h3,
@@ -63,6 +61,16 @@ a {
   width: 200px;
 }
 
+.movie-cover h3,
+.movie-cover h4 {
+  margin: 10px 0;
+}
+
+li:hover,
 li:hover img {
-  filter: brightness(80%); /* Slight darkening on hover */
+  transform: scale(1.05);
+}
+
+li:hover h3 {
+  color: rgb(172, 170, 170);
 }
