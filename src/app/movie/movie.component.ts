@@ -59,6 +59,23 @@ export class MovieComponent implements OnInit {
             icon: 'success',
             confirmButtonColor: '#3085d6',
           });
+          this.cartService.bookMovie({
+            name: this.movie!.name,
+            description: this.movie!.description,
+            genre: this.movie!.genre,
+            duration: this.movie!.description,
+            director: this.movie!.director,
+            actors: this.movie!.actors,
+            dateOfRelease: this.movie!.dateOfRelease,
+            dateOfShowing: this.movie!.dateOfShowing,
+            rating: this.movie!.rating,
+            coverImage: this.movie!.coverImage,
+            price: this.movie!.price,
+            numberOfTickets: this.numOfTickets,
+          });
+
+          this.totalPrice = 0;
+          this.numOfTickets = 0;
         } else {
           Swal.fire({
             title: 'Login to make a reservation.',
@@ -66,25 +83,6 @@ export class MovieComponent implements OnInit {
             confirmButtonColor: '#3085d6',
           });
         }
-      }
-      if (result.isConfirmed) {
-        this.cartService.bookMovie({
-          name: this.movie!.name,
-          description: this.movie!.description,
-          genre: this.movie!.genre,
-          duration: this.movie!.description,
-          director: this.movie!.director,
-          actors: this.movie!.actors,
-          dateOfRelease: this.movie!.dateOfRelease,
-          dateOfShowing: this.movie!.dateOfShowing,
-          rating: this.movie!.rating,
-          coverImage: this.movie!.coverImage,
-          price: this.movie!.price,
-          numberOfTickets: this.numOfTickets,
-        });
-
-        this.totalPrice = 0;
-        this.numOfTickets = 0;
       }
 
       if (result.dismiss == Swal.DismissReason.cancel) {
