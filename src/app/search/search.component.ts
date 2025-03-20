@@ -17,6 +17,21 @@ export class SearchComponent {
   public searchQuery: string = '';
 
   searchMovies(): void {
-    this.search = this.movies.filter((movie) => movie.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
+    this.search = this.movies.filter(
+      (movie) =>
+        movie.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+        movie.dateOfRelease.includes(this.searchQuery) ||
+        movie.dateOfShowing.includes(this.searchQuery) ||
+        movie.price.toString().concat('$').includes(this.searchQuery) ||
+        movie.duration.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+        movie.description.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+        movie.director.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+        movie.genre.some((genre) => {
+          return genre.toLowerCase().includes(this.searchQuery.toLowerCase());
+        }) ||
+        movie.actors.some((actor) => {
+          return actor.toLowerCase().includes(this.searchQuery.toLowerCase());
+        })
+    );
   }
 }

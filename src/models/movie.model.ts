@@ -3,7 +3,7 @@ export interface MovieModel {
   description: string;
   genre: string[];
   duration: string;
-  director: string[];
+  director: string;
   actors: string[];
   dateOfRelease: string;
   dateOfShowing: string;
