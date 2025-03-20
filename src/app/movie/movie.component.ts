@@ -6,6 +6,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import Swal from 'sweetalert2';
 import { CartService } from '../../services/cart.service';
+import { UserService } from '../../services/user.service';
+import { UserModel } from '../../models/user.model';
 
 @Component({
   selector: 'app-movie',
@@ -19,16 +21,25 @@ export class MovieComponent implements OnInit {
   public movieName: String | undefined;
   public numOfTickets: any = 0;
   public totalPrice: any = 0;
+  public active: UserModel | null = null;
 
   public cartService: CartService;
+  public userService: UserService;
 
   constructor(private route: ActivatedRoute, private router: Router) {
     this.cartService = CartService.getInstance();
+    this.userService = UserService.getInstance();
   }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => (this.movieName = params['name']));
     this.movie = movieData.find((movie) => movie.name == this.movieName);
+
+    try {
+      this.active = this.userService.getCurrentUser();
+    } catch (e) {}
+
+    console.log(this.active);
   }
 
   continueShopping() {
@@ -42,11 +53,19 @@ export class MovieComponent implements OnInit {
       cancelButtonText: 'Pay now',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: 'Reservation confirmed',
-          icon: 'success',
-          confirmButtonColor: '#3085d6',
-        });
+        if (this.active != null) {
+          Swal.fire({
+            title: 'Reservation confirmed',
+            icon: 'success',
+            confirmButtonColor: '#3085d6',
+          });
+        } else {
+          Swal.fire({
+            title: 'Login to make a reservation.',
+            icon: 'info',
+            confirmButtonColor: '#3085d6',
+          });
+        }
       }
       if (result.isConfirmed) {
         this.cartService.bookMovie({
